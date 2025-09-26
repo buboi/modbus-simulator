@@ -1,0 +1,9 @@
+# Build outputs
+/server
+*.exe
+*.out
+*.test
+
+# IDE/editor files
+.vscode/
+.idea/
