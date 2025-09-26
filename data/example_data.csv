@@ -1,0 +1,5 @@
+temperature,humidity,pump,alarm
+21,55,0,0
+22,58,1,0
+23,60,1,1
+24,57,0,0

@@ -1,0 +1,25 @@
+csv_file = "data/example_data.csv"
+update_interval = "3s"
+
+[server]
+listen_address = ":1502"
+
+[[registers]]
+type = "holding"
+address = 1
+csv_column = "temperature"
+
+[[registers]]
+type = "input"
+address = 0
+csv_column = "humidity"
+
+[[registers]]
+type = "coil"
+address = 5
+csv_column = "pump"
+
+[[registers]]
+type = "discrete"
+address = 2
+csv_column = "alarm"
