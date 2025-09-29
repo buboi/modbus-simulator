@@ -1,5 +1,5 @@
-temperature,humidity,pump,alarm
-21,55,0,0
-22,58,1,0
-23,60,1,1
-24,57,0,0
+temperature,humidity,pump,alarm,flow_rate
+21.5,55.2,0,0,12.4
+22.1,58.0,1,0,12.8
+23.3,60.4,1,1,12.6
+24.0,57.9,0,0,12.5

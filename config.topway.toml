@@ -8,61 +8,73 @@ listen_address = ":1502"
 type = "holding"
 address = 0
 csv_column = "pretreatment_concentration_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 1
 csv_column = "pretreatment_total_chlorine_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 2
 csv_column = "pretreatment_residual_chlorine_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 3
 csv_column = "eyedrop_concentration_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 4
 csv_column = "eyedrop_total_chlorine_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 5
 csv_column = "eyedrop_residual_chlorine_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 6
 csv_column = "water_treatment_turbidity_ntu"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 7
 csv_column = "water_treatment_residual_chlorine_mg_l"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 8
 csv_column = "water_treatment_temperature_c"
+scale = 10
 
 [[registers]]
 type = "holding"
 address = 9
 csv_column = "supply_tank_level_m"
+scale = 100
 
 [[registers]]
 type = "holding"
 address = 10
 csv_column = "supply_tank_temperature_c"
+scale = 10
 
 [[registers]]
 type = "holding"
 address = 11
 csv_column = "supply_tank_ph"
+scale = 100
 
 [[registers]]
 type = "holding"
@@ -73,6 +85,7 @@ csv_column = "eyedrop_ec_us_cm"
 type = "holding"
 address = 13
 csv_column = "eyedrop_temperature_c"
+scale = 10
 
 [[registers]]
 type = "holding"
@@ -83,3 +96,4 @@ csv_column = "water_treatment_ec_us_cm"
 type = "holding"
 address = 15
 csv_column = "water_treatment_ph"
+scale = 100
