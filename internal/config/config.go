@@ -24,6 +24,9 @@ type RegisterConfig struct {
 	Type      string
 	Address   uint16
 	CSVColumn string
+	Scale     float64
+	Offset    float64
+	DataType  string
 }
 
 func Load(path string) (Config, error) {
@@ -53,7 +56,7 @@ func Load(path string) (Config, error) {
 				section = strings.Trim(section, "[]")
 			}
 			if section == "registers" && strings.HasPrefix(line, "[[") {
-				cfg.Registers = append(cfg.Registers, RegisterConfig{})
+				cfg.Registers = append(cfg.Registers, RegisterConfig{Scale: 1})
 				currentSection = "registers"
 			} else if section == "server" {
 				currentSection = "server"
@@ -146,6 +149,20 @@ func assignRegister(reg *RegisterConfig, key, value string) error {
 		reg.Address = uint16(v)
 	case "csv_column":
 		reg.CSVColumn = parseString(value)
+	case "scale":
+		v, err := strconv.ParseFloat(parseString(value), 64)
+		if err != nil {
+			return fmt.Errorf("invalid scale value: %w", err)
+		}
+		reg.Scale = v
+	case "offset":
+		v, err := strconv.ParseFloat(parseString(value), 64)
+		if err != nil {
+			return fmt.Errorf("invalid offset value: %w", err)
+		}
+		reg.Offset = v
+	case "data_type":
+		reg.DataType = strings.ToLower(parseString(value))
 	default:
 		return fmt.Errorf("unknown register key %s", key)
 	}

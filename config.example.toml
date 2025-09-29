@@ -8,11 +8,15 @@ listen_address = ":1502"
 type = "holding"
 address = 1
 csv_column = "temperature"
+scale = 10
+data_type = "uint16"
 
 [[registers]]
 type = "input"
 address = 0
 csv_column = "humidity"
+scale = 10
+offset = 100
 
 [[registers]]
 type = "coil"
@@ -23,3 +27,9 @@ csv_column = "pump"
 type = "discrete"
 address = 2
 csv_column = "alarm"
+
+[[registers]]
+type = "holding"
+address = 10
+csv_column = "flow_rate"
+data_type = "float32"

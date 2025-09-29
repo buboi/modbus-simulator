@@ -12,6 +12,7 @@ registers with the configured values.
 - TOML configuration to define server settings, update interval, and register
   bindings.
 - CSV-driven data updates that cycle through rows on a fixed interval.
+- Optional scaling, offset, and data type conversion for numeric registers.
 
 ## Getting Started
 
@@ -58,6 +59,13 @@ supports the following Modbus function codes:
   - `type`: Register type (`holding`, `input`, `coil`, or `discrete`).
   - `address`: Register address to update.
   - `csv_column`: Column name in the CSV file to use for the register value.
+  - `scale`: Optional multiplier applied to the CSV value before it is written
+    to the register (defaults to `1`).
+  - `offset`: Optional value added after scaling (defaults to `0`).
+  - `data_type`: Optional numeric representation for holding and input
+    registers. Supported values are `uint16`, `int16`, and `float32`. Float32
+    values consume two consecutive registers starting at `address`.
 
 The simulator loops through the CSV rows continuously. Coil and discrete input
-values treat any non-zero CSV value as `true`.
+values treat any non-zero (after applying scale and offset) CSV value as
+`true`.
