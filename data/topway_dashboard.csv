@@ -1,0 +1,6 @@
+pretreatment_concentration_mg_l,pretreatment_total_chlorine_mg_l,pretreatment_residual_chlorine_mg_l,eyedrop_concentration_mg_l,eyedrop_total_chlorine_mg_l,eyedrop_residual_chlorine_mg_l,water_treatment_turbidity_ntu,water_treatment_residual_chlorine_mg_l,water_treatment_temperature_c,supply_tank_level_m,supply_tank_temperature_c,supply_tank_ph,eyedrop_ec_us_cm,eyedrop_temperature_c,water_treatment_ec_us_cm,water_treatment_ph
+2.4,0.62,0.12,2.1,0.55,0.08,0.32,0.41,21.5,3.4,22.1,6.8,1450,24.8,820,7.2
+2.6,0.65,0.15,2.3,0.58,0.10,0.40,0.38,21.8,3.5,22.4,6.9,1475,24.9,815,7.1
+2.5,0.60,0.11,2.2,0.53,0.07,0.36,0.42,22.0,3.3,22.0,6.7,1460,25.0,825,7.3
+2.7,0.68,0.16,2.4,0.57,0.09,0.45,0.44,22.3,3.6,22.2,6.8,1485,25.1,830,7.2
+2.3,0.59,0.10,2.0,0.52,0.06,0.30,0.39,21.2,3.2,21.8,6.6,1440,24.7,810,7.0
