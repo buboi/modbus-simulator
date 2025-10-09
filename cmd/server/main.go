@@ -132,7 +132,7 @@ func newSimulator(cfg config.Config) (*simulator, error) {
 		}
 	}
 
-	rows, err := loadCSV(cfg.CSVFile)
+	rows, err := loadCSV(cfg.CSVFile, values)
 	if err != nil {
 		server.Close()
 		return nil, fmt.Errorf("load csv: %w", err)
@@ -149,7 +149,7 @@ func newSimulator(cfg config.Config) (*simulator, error) {
 	return sim, nil
 }
 
-func loadCSV(path string) ([]map[string]float64, error) {
+func loadCSV(path string, registers []registerValue) ([]map[string]float64, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
@@ -166,22 +166,42 @@ func loadCSV(path string) ([]map[string]float64, error) {
 	}
 
 	header := records[0]
+	requiredColumns := make(map[string]struct{}, len(registers))
+	for _, reg := range registers {
+		if reg.column == "" {
+			continue
+		}
+		requiredColumns[reg.column] = struct{}{}
+	}
+
+	columnIndex := make(map[string]int, len(header))
+	for i, key := range header {
+		columnIndex[key] = i
+	}
+
+	for column := range requiredColumns {
+		if _, ok := columnIndex[column]; !ok {
+			return nil, fmt.Errorf("csv missing required column %s", column)
+		}
+	}
+
 	rows := make([]map[string]float64, 0, len(records)-1)
 	for _, record := range records[1:] {
 		if len(record) != len(header) {
 			return nil, errors.New("csv record length mismatch")
 		}
-		row := make(map[string]float64, len(header))
-		for i, key := range header {
-			valStr := strings.TrimSpace(record[i])
+		row := make(map[string]float64, len(requiredColumns))
+		for column := range requiredColumns {
+			idx := columnIndex[column]
+			valStr := strings.TrimSpace(record[idx])
 			if valStr == "" {
-				return nil, fmt.Errorf("empty value for column %s", key)
+				return nil, fmt.Errorf("empty value for column %s", column)
 			}
 			val, err := strconv.ParseFloat(valStr, 64)
 			if err != nil {
-				return nil, fmt.Errorf("invalid value for column %s: %w", key, err)
+				return nil, fmt.Errorf("invalid value for column %s: %w", column, err)
 			}
-			row[key] = val
+			row[column] = val
 		}
 		rows = append(rows, row)
 	}
