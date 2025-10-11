@@ -212,25 +212,25 @@ scale = 100
 [[registers]]
 type = "holding"
 address = 26
-csv_column = "silane_ec_pv_ms_cm"
+csv_column = "silane_ec_pv_us_cm"
 scale = 100
 
 [[registers]]
 type = "holding"
 address = 27
-csv_column = "silane_ec_cv_ms_cm"
+csv_column = "silane_ec_cv_us_cm"
 scale = 100
 
 [[registers]]
 type = "holding"
 address = 28
-csv_column = "silane_ec_la_ms_cm"
+csv_column = "silane_ec_la_us_cm"
 scale = 100
 
 [[registers]]
 type = "holding"
 address = 29
-csv_column = "silane_ec_ha_ms_cm"
+csv_column = "silane_ec_ha_us_cm"
 scale = 100
 
 [[registers]]
