@@ -463,3 +463,62 @@ csv_column = "ecoat_tank_ph_low_alarm_active"
 type = "coil"
 address = 25
 csv_column = "ecoat_tank_ph_high_alarm_active"
+
+# ---------------------------------------------------------------------------
+# Alarm bitfields
+# ---------------------------------------------------------------------------
+[[registers]]
+type = "holding"
+address = 54
+csv_column = "pre_degreasing_alarm_bits"
+# Bits: 0=pre_degreasing_free_alkali_low_alarm_active,
+#       1=pre_degreasing_free_alkali_high_alarm_active,
+#       2=pre_degreasing_total_alkali_low_alarm_active,
+#       3=pre_degreasing_total_alkali_high_alarm_active
+
+[[registers]]
+type = "holding"
+address = 55
+csv_column = "degreasing_alarm_bits"
+# Bits: 0=degreasing_free_alkali_low_alarm_active,
+#       1=degreasing_free_alkali_high_alarm_active,
+#       2=degreasing_total_alkali_low_alarm_active,
+#       3=degreasing_total_alkali_high_alarm_active
+
+[[registers]]
+type = "holding"
+address = 56
+csv_column = "silane_alarm_bits"
+# Bits: 0=silane_ph_low_alarm_active,
+#       1=silane_ph_high_alarm_active,
+#       2=silane_zirconium_low_alarm_active,
+#       3=silane_zirconium_high_alarm_active,
+#       4=silane_ec_low_alarm_active,
+#       5=silane_ec_high_alarm_active
+
+[[registers]]
+type = "holding"
+address = 57
+csv_column = "water_rinse_alarm_bits"
+# Bits: 0=water_rinse_ec_low_alarm_active,
+#       1=water_rinse_ec_high_alarm_active,
+#       2=water_rinse_ph_low_alarm_active,
+#       3=water_rinse_ph_high_alarm_active
+
+[[registers]]
+type = "holding"
+address = 58
+csv_column = "precoat_di_rinse_alarm_bits"
+# Bits: 0=precoat_di_rinse_ec_low_alarm_active,
+#       1=precoat_di_rinse_ec_high_alarm_active,
+#       2=precoat_di_rinse_ph_low_alarm_active,
+#       3=precoat_di_rinse_ph_high_alarm_active
+
+[[registers]]
+type = "holding"
+address = 59
+csv_column = "ecoat_tank_alarm_bits"
+# Bits: 0=ecoat_tank_ec_low_alarm_active,
+#       1=ecoat_tank_ec_high_alarm_active,
+#       2=ecoat_tank_ph_low_alarm_active,
+#       3=ecoat_tank_ph_high_alarm_active
