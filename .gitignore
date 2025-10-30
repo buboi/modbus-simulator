@@ -7,3 +7,6 @@
 # IDE/editor files
 .vscode/
 .idea/
+
+# Ref files
+.ref/
