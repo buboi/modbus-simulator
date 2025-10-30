@@ -1,5 +1,5 @@
 csv_file = "data/topway_dashboard_alarms.csv"
-update_interval = "5s"
+update_interval = "2s"
 
 [server]
 listen_address = ":1502"
