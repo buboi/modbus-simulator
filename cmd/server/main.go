@@ -105,11 +105,40 @@ func newSimulator(cfg config.Config) (*simulator, error) {
 				dataType = "uint16"
 			}
 			switch dataType {
-			case "uint16", "int16":
-			case "float32":
+			case "uint16":
+			case "int16":
+			case "float32", "float32_be":
+				dataType = "float32_be"
 				if reg.Address == 0xFFFF {
 					server.Close()
 					return nil, fmt.Errorf("register %s at address %d cannot fit float32 value", reg.Type, reg.Address)
+				}
+			case "float32_le":
+				if reg.Address == 0xFFFF {
+					server.Close()
+					return nil, fmt.Errorf("register %s at address %d cannot fit float32 value", reg.Type, reg.Address)
+				}
+			case "uint32", "uint32_be":
+				dataType = "uint32_be"
+				if reg.Address == 0xFFFF {
+					server.Close()
+					return nil, fmt.Errorf("register %s at address %d cannot fit 32-bit value", reg.Type, reg.Address)
+				}
+			case "uint32_le":
+				if reg.Address == 0xFFFF {
+					server.Close()
+					return nil, fmt.Errorf("register %s at address %d cannot fit 32-bit value", reg.Type, reg.Address)
+				}
+			case "int32", "int32_be":
+				dataType = "int32_be"
+				if reg.Address == 0xFFFF {
+					server.Close()
+					return nil, fmt.Errorf("register %s at address %d cannot fit 32-bit value", reg.Type, reg.Address)
+				}
+			case "int32_le":
+				if reg.Address == 0xFFFF {
+					server.Close()
+					return nil, fmt.Errorf("register %s at address %d cannot fit 32-bit value", reg.Type, reg.Address)
 				}
 			default:
 				server.Close()
@@ -293,8 +322,18 @@ func (s *simulator) setNumericRegister(value registerValue, scaled float64) erro
 			return err
 		}
 		return s.setRegisterWord(value.regType, value.address, word)
-	case "float32":
-		return s.setRegisterFloat32(value, scaled)
+	case "float32", "float32_be":
+		return s.setRegisterFloat32(value, scaled, false)
+	case "float32_le":
+		return s.setRegisterFloat32(value, scaled, true)
+	case "uint32", "uint32_be":
+		return s.setRegisterUint32(value, scaled, false)
+	case "uint32_le":
+		return s.setRegisterUint32(value, scaled, true)
+	case "int32", "int32_be":
+		return s.setRegisterInt32(value, scaled, false)
+	case "int32_le":
+		return s.setRegisterInt32(value, scaled, true)
 	default:
 		return fmt.Errorf("unsupported data type %s", value.dataType)
 	}
@@ -311,7 +350,7 @@ func (s *simulator) setRegisterWord(regType string, address uint16, word uint16)
 	}
 }
 
-func (s *simulator) setRegisterFloat32(value registerValue, scaled float64) error {
+func (s *simulator) setRegisterFloat32(value registerValue, scaled float64, littleEndian bool) error {
 	if math.IsNaN(scaled) || math.IsInf(scaled, 0) {
 		return fmt.Errorf("invalid float32 value for column %s", value.column)
 	}
@@ -325,10 +364,50 @@ func (s *simulator) setRegisterFloat32(value registerValue, scaled float64) erro
 	bits := math.Float32bits(f32)
 	hi := uint16(bits >> 16)
 	lo := uint16(bits & 0xFFFF)
-	if err := s.setRegisterWord(value.regType, value.address, hi); err != nil {
+	first, second := hi, lo
+	if littleEndian {
+		first, second = lo, hi
+	}
+	return s.setRegisterDoubleWord(value, first, second)
+}
+
+func (s *simulator) setRegisterUint32(value registerValue, scaled float64, littleEndian bool) error {
+	u32, err := floatToUint32(scaled)
+	if err != nil {
 		return err
 	}
-	return s.setRegisterWord(value.regType, value.address+1, lo)
+	hi := uint16(u32 >> 16)
+	lo := uint16(u32 & 0xFFFF)
+	first, second := hi, lo
+	if littleEndian {
+		first, second = lo, hi
+	}
+	return s.setRegisterDoubleWord(value, first, second)
+}
+
+func (s *simulator) setRegisterInt32(value registerValue, scaled float64, littleEndian bool) error {
+	i32, err := floatToInt32(scaled)
+	if err != nil {
+		return err
+	}
+	bits := uint32(i32)
+	hi := uint16(bits >> 16)
+	lo := uint16(bits & 0xFFFF)
+	first, second := hi, lo
+	if littleEndian {
+		first, second = lo, hi
+	}
+	return s.setRegisterDoubleWord(value, first, second)
+}
+
+func (s *simulator) setRegisterDoubleWord(value registerValue, first, second uint16) error {
+	if value.address == 0xFFFF {
+		return fmt.Errorf("address %d out of range for 32-bit value", value.address)
+	}
+	if err := s.setRegisterWord(value.regType, value.address, first); err != nil {
+		return err
+	}
+	return s.setRegisterWord(value.regType, value.address+1, second)
 }
 
 func floatToUint16(value float64) (uint16, error) {
@@ -351,6 +430,31 @@ func floatToInt16(value float64) (uint16, error) {
 		return 0, fmt.Errorf("value %f out of range for int16", value)
 	}
 	return uint16(int16(rounded)), nil
+}
+
+func floatToUint32(value float64) (uint32, error) {
+	if math.IsNaN(value) || math.IsInf(value, 0) {
+		return 0, fmt.Errorf("invalid uint32 value")
+	}
+	rounded := math.Round(value)
+	const maxUint32 = 4294967295.0
+	if rounded < 0 || rounded > maxUint32 {
+		return 0, fmt.Errorf("value %f out of range for uint32", value)
+	}
+	return uint32(rounded), nil
+}
+
+func floatToInt32(value float64) (int32, error) {
+	if math.IsNaN(value) || math.IsInf(value, 0) {
+		return 0, fmt.Errorf("invalid int32 value")
+	}
+	rounded := math.Round(value)
+	const minInt32 = -2147483648.0
+	const maxInt32 = 2147483647.0
+	if rounded < minInt32 || rounded > maxInt32 {
+		return 0, fmt.Errorf("value %f out of range for int32", value)
+	}
+	return int32(rounded), nil
 }
 
 func (s *simulator) Close() {

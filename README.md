@@ -63,8 +63,10 @@ supports the following Modbus function codes:
     to the register (defaults to `1`).
   - `offset`: Optional value added after scaling (defaults to `0`).
   - `data_type`: Optional numeric representation for holding and input
-    registers. Supported values are `uint16`, `int16`, and `float32`. Float32
-    values consume two consecutive registers starting at `address`.
+    registers. Supported values are `uint16`, `int16`, `float32` (big-endian),
+    `float32_le`, `uint32_be`, `uint32_le`, `int32_be`, and `int32_le`.
+    The float32 variants and 32-bit integer types consume two consecutive
+    registers starting at `address`.
 
 The simulator loops through the CSV rows continuously. Coil and discrete input
 values treat any non-zero (after applying scale and offset) CSV value as

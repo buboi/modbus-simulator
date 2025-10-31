@@ -3,6 +3,7 @@
 *.exe
 *.out
 *.test
+modbus-simulator
 
 # IDE/editor files
 .vscode/

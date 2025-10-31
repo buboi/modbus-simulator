@@ -41,225 +41,225 @@ address = 40205
 csv_column = "register_40205"
 data_type = "uint16"
 
-# Concentration values (float32, little-endian pairs per 4_XRF.csv)
+# Concentration values (float32_le, little-endian pairs per 4_XRF.csv)
 [[registers]]
 type = "holding"
 address = 40001
 csv_column = "reserved_float_40001"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40005
 csv_column = "slot1_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40009
 csv_column = "slot1_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40013
 csv_column = "slot1_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40017
 csv_column = "slot1_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40021
 csv_column = "slot1_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40025
 csv_column = "slot1_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40029
 csv_column = "slot2_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40033
 csv_column = "slot2_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40037
 csv_column = "slot2_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40041
 csv_column = "slot2_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40045
 csv_column = "slot2_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40049
 csv_column = "slot2_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40053
 csv_column = "slot3_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40057
 csv_column = "slot3_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40061
 csv_column = "slot3_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40065
 csv_column = "slot3_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40069
 csv_column = "slot3_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40073
 csv_column = "slot3_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40077
 csv_column = "slot4_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40081
 csv_column = "slot4_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40085
 csv_column = "slot4_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40089
 csv_column = "slot4_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40093
 csv_column = "slot4_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40097
 csv_column = "slot4_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40101
 csv_column = "slot5_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40105
 csv_column = "slot5_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40109
 csv_column = "slot5_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40113
 csv_column = "slot5_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40117
 csv_column = "slot5_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40121
 csv_column = "slot5_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40125
 csv_column = "slot6_component1_concentration_au"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40129
 csv_column = "slot6_component2_concentration_co"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40133
 csv_column = "slot6_component3_concentration_ni"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40137
 csv_column = "slot6_component4_concentration_ph"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40141
 csv_column = "slot6_component5_concentration_sg"
-data_type = "float32"
+data_type = "float32_le"
 
 [[registers]]
 type = "holding"
 address = 40145
 csv_column = "slot6_component6_concentration"
-data_type = "float32"
+data_type = "float32_le"
