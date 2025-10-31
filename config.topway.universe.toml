@@ -1,0 +1,121 @@
+csv_file = "data/topway_universe_data.csv"
+update_interval = "2s"
+
+[server]
+listen_address = ":1502"
+
+# Tank 1 Fe thresholds and measurement (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5203
+csv_column = "tank1_fe_upper_limit_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5205
+csv_column = "tank1_fe_control_value_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5207
+csv_column = "tank1_fe_lower_limit_g_l"
+data_type = "float32"
+
+# Tank 1 Cu thresholds (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5209
+csv_column = "tank1_cu_upper_limit_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5211
+csv_column = "tank1_cu_control_value_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5213
+csv_column = "tank1_cu_lower_limit_g_l"
+data_type = "float32"
+
+# Tank 1 live concentrations (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5215
+csv_column = "tank1_fe_concentration_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5217
+csv_column = "tank1_cu_concentration_g_l"
+data_type = "float32"
+
+# Tank 1 alarm bitfield (uint16)
+[[registers]]
+type = "holding"
+address = 5219
+csv_column = "tank1_alarm_bits"
+data_type = "uint16"
+
+# Tank 2 Fe thresholds and measurement (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5253
+csv_column = "tank2_fe_upper_limit_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5255
+csv_column = "tank2_fe_control_value_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5257
+csv_column = "tank2_fe_lower_limit_g_l"
+data_type = "float32"
+
+# Tank 2 Cu thresholds (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5259
+csv_column = "tank2_cu_upper_limit_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5261
+csv_column = "tank2_cu_control_value_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5263
+csv_column = "tank2_cu_lower_limit_g_l"
+data_type = "float32"
+
+# Tank 2 live concentrations (float32 big-endian)
+[[registers]]
+type = "holding"
+address = 5265
+csv_column = "tank2_fe_concentration_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 5267
+csv_column = "tank2_cu_concentration_g_l"
+data_type = "float32"
+
+# Tank 2 alarm bitfield (uint16)
+[[registers]]
+type = "holding"
+address = 5269
+csv_column = "tank2_alarm_bits"
+data_type = "uint16"

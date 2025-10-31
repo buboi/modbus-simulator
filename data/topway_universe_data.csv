@@ -1,0 +1,4 @@
+scenario,tank1_fe_upper_limit_g_l,tank1_fe_control_value_g_l,tank1_fe_lower_limit_g_l,tank1_cu_upper_limit_g_l,tank1_cu_control_value_g_l,tank1_cu_lower_limit_g_l,tank1_fe_concentration_g_l,tank1_cu_concentration_g_l,tank1_alarm_bits,tank2_fe_upper_limit_g_l,tank2_fe_control_value_g_l,tank2_fe_lower_limit_g_l,tank2_cu_upper_limit_g_l,tank2_cu_control_value_g_l,tank2_cu_lower_limit_g_l,tank2_fe_concentration_g_l,tank2_cu_concentration_g_l,tank2_alarm_bits
+normal_operation,7.6,6.1,4.6,4.1,3.05,2.1,6.0,2.9,0,8.1,6.6,5.1,3.6,2.55,1.6,6.3,2.35,0
+tank1_high_cu_alarm,7.4,6.3,4.4,4.2,3.25,2.15,6.5,4.5,5,8.2,6.4,5.2,3.7,2.6,1.55,6.2,2.8,0
+tank2_low_fe_alarm,7.7,6.0,4.3,4.0,3.1,2.05,5.4,2.5,0,8.3,6.2,4.8,3.4,2.4,1.45,4.0,1.8,136
