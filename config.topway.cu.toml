@@ -1,0 +1,458 @@
+csv_file = "data/topway_cu_data.csv"
+update_interval = "1s"
+
+[server]
+listen_address = ":1502"
+
+# Analyzer status (holding register 0 bit0: 0=off, 1=running)
+[[registers]]
+type = "holding"
+address = 0
+csv_column = "analyzer_status"
+
+# Tank 1 component concentrations (float32 little-endian)
+[[registers]]
+type = "holding"
+address = 40001
+csv_column = "tank1_component1_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40005
+csv_column = "tank1_component2_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40009
+csv_column = "tank1_component3_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40013
+csv_column = "tank1_component4_value"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40017
+csv_column = "tank1_component5_value"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40021
+csv_column = "tank1_component6_value"
+data_type = "float32_le"
+
+# Tank 2 component concentrations (float32 little-endian)
+[[registers]]
+type = "holding"
+address = 40025
+csv_column = "tank2_component1_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40029
+csv_column = "tank2_component2_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40033
+csv_column = "tank2_component3_g_l"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40037
+csv_column = "tank2_component4_value"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40041
+csv_column = "tank2_component5_value"
+data_type = "float32_le"
+
+[[registers]]
+type = "holding"
+address = 40045
+csv_column = "tank2_component6_value"
+data_type = "float32_le"
+
+# Alarm flags (holding registers 40200-40271, 1=alarm active)
+
+# Tank 1 alarms
+[[registers]]
+type = "holding"
+address = 40200
+csv_column = "alarm_tank1_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40201
+csv_column = "alarm_tank1_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40202
+csv_column = "alarm_tank1_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40203
+csv_column = "alarm_tank1_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40204
+csv_column = "alarm_tank1_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40205
+csv_column = "alarm_tank1_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40206
+csv_column = "alarm_tank1_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40207
+csv_column = "alarm_tank1_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40208
+csv_column = "alarm_tank1_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40209
+csv_column = "alarm_tank1_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40210
+csv_column = "alarm_tank1_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40211
+csv_column = "alarm_tank1_component6_low"
+
+
+# Tank 2 alarms
+[[registers]]
+type = "holding"
+address = 40212
+csv_column = "alarm_tank2_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40213
+csv_column = "alarm_tank2_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40214
+csv_column = "alarm_tank2_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40215
+csv_column = "alarm_tank2_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40216
+csv_column = "alarm_tank2_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40217
+csv_column = "alarm_tank2_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40218
+csv_column = "alarm_tank2_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40219
+csv_column = "alarm_tank2_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40220
+csv_column = "alarm_tank2_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40221
+csv_column = "alarm_tank2_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40222
+csv_column = "alarm_tank2_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40223
+csv_column = "alarm_tank2_component6_low"
+
+
+# Tank 3 alarms
+[[registers]]
+type = "holding"
+address = 40224
+csv_column = "alarm_tank3_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40225
+csv_column = "alarm_tank3_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40226
+csv_column = "alarm_tank3_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40227
+csv_column = "alarm_tank3_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40228
+csv_column = "alarm_tank3_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40229
+csv_column = "alarm_tank3_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40230
+csv_column = "alarm_tank3_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40231
+csv_column = "alarm_tank3_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40232
+csv_column = "alarm_tank3_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40233
+csv_column = "alarm_tank3_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40234
+csv_column = "alarm_tank3_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40235
+csv_column = "alarm_tank3_component6_low"
+
+
+# Tank 4 alarms
+[[registers]]
+type = "holding"
+address = 40236
+csv_column = "alarm_tank4_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40237
+csv_column = "alarm_tank4_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40238
+csv_column = "alarm_tank4_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40239
+csv_column = "alarm_tank4_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40240
+csv_column = "alarm_tank4_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40241
+csv_column = "alarm_tank4_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40242
+csv_column = "alarm_tank4_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40243
+csv_column = "alarm_tank4_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40244
+csv_column = "alarm_tank4_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40245
+csv_column = "alarm_tank4_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40246
+csv_column = "alarm_tank4_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40247
+csv_column = "alarm_tank4_component6_low"
+
+
+# Tank 5 alarms
+[[registers]]
+type = "holding"
+address = 40248
+csv_column = "alarm_tank5_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40249
+csv_column = "alarm_tank5_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40250
+csv_column = "alarm_tank5_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40251
+csv_column = "alarm_tank5_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40252
+csv_column = "alarm_tank5_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40253
+csv_column = "alarm_tank5_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40254
+csv_column = "alarm_tank5_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40255
+csv_column = "alarm_tank5_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40256
+csv_column = "alarm_tank5_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40257
+csv_column = "alarm_tank5_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40258
+csv_column = "alarm_tank5_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40259
+csv_column = "alarm_tank5_component6_low"
+
+
+# Tank 6 alarms
+[[registers]]
+type = "holding"
+address = 40260
+csv_column = "alarm_tank6_component1_high"
+
+[[registers]]
+type = "holding"
+address = 40261
+csv_column = "alarm_tank6_component1_low"
+
+[[registers]]
+type = "holding"
+address = 40262
+csv_column = "alarm_tank6_component2_high"
+
+[[registers]]
+type = "holding"
+address = 40263
+csv_column = "alarm_tank6_component2_low"
+
+[[registers]]
+type = "holding"
+address = 40264
+csv_column = "alarm_tank6_component3_high"
+
+[[registers]]
+type = "holding"
+address = 40265
+csv_column = "alarm_tank6_component3_low"
+
+[[registers]]
+type = "holding"
+address = 40266
+csv_column = "alarm_tank6_component4_high"
+
+[[registers]]
+type = "holding"
+address = 40267
+csv_column = "alarm_tank6_component4_low"
+
+[[registers]]
+type = "holding"
+address = 40268
+csv_column = "alarm_tank6_component5_high"
+
+[[registers]]
+type = "holding"
+address = 40269
+csv_column = "alarm_tank6_component5_low"
+
+[[registers]]
+type = "holding"
+address = 40270
+csv_column = "alarm_tank6_component6_high"
+
+[[registers]]
+type = "holding"
+address = 40271
+csv_column = "alarm_tank6_component6_low"
