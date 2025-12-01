@@ -1,0 +1,539 @@
+csv_file = "data/topway_shenghong_cu_n.csv"
+update_interval = "10s"
+
+[server]
+listen_address = ":1502"
+
+[[registers]]
+type = "holding"
+address = 001
+csv_column = "tank1_cu_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 003
+csv_column = "tank1_hcho_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 005
+csv_column = "tank1_naoh_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 007
+csv_column = "tank1_base_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 009
+csv_column = "tank2_cu_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 011
+csv_column = "tank2_hcho_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 013
+csv_column = "tank2_naoh_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 015
+csv_column = "tank2_base_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 017
+csv_column = "tank3_cu_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 019
+csv_column = "tank3_hcho_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 021
+csv_column = "tank3_naoh_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 023
+csv_column = "tank3_base_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 025
+csv_column = "tank4_cu_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 027
+csv_column = "tank4_hcho_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 029
+csv_column = "tank4_naoh_g_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 031
+csv_column = "tank4_base_ml_l"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 033
+csv_column = "tank1_cu_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 035
+csv_column = "tank1_cu_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 037
+csv_column = "tank1_cu_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 039
+csv_column = "tank1_hcho_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 041
+csv_column = "tank1_hcho_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 043
+csv_column = "tank1_hcho_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 045
+csv_column = "tank1_naoh_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 047
+csv_column = "tank1_naoh_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 049
+csv_column = "tank1_naoh_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 051
+csv_column = "tank1_base_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 053
+csv_column = "tank1_base_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 055
+csv_column = "tank1_base_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 057
+csv_column = "tank2_cu_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 059
+csv_column = "tank2_cu_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 061
+csv_column = "tank2_cu_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 063
+csv_column = "tank2_hcho_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 065
+csv_column = "tank2_hcho_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 067
+csv_column = "tank2_hcho_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 069
+csv_column = "tank2_naoh_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 071
+csv_column = "tank2_naoh_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 073
+csv_column = "tank2_naoh_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 075
+csv_column = "tank2_base_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 077
+csv_column = "tank2_base_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 079
+csv_column = "tank2_base_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 081
+csv_column = "tank3_cu_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 083
+csv_column = "tank3_cu_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 085
+csv_column = "tank3_cu_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 087
+csv_column = "tank3_hcho_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 089
+csv_column = "tank3_hcho_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 091
+csv_column = "tank3_hcho_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 093
+csv_column = "tank3_naoh_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 095
+csv_column = "tank3_naoh_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 097
+csv_column = "tank3_naoh_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 099
+csv_column = "tank3_base_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 101
+csv_column = "tank3_base_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 103
+csv_column = "tank3_base_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 105
+csv_column = "tank4_cu_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 107
+csv_column = "tank4_cu_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 109
+csv_column = "tank4_cu_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 111
+csv_column = "tank4_hcho_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 113
+csv_column = "tank4_hcho_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 115
+csv_column = "tank4_hcho_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 117
+csv_column = "tank4_naoh_g_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 119
+csv_column = "tank4_naoh_g_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 121
+csv_column = "tank4_naoh_g_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 123
+csv_column = "tank4_base_ml_l_upper_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 125
+csv_column = "tank4_base_ml_l_control_value"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 127
+csv_column = "tank4_base_ml_l_lower_limit"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 129
+csv_column = "tank1_cu_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 131
+csv_column = "tank1_hcho_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 133
+csv_column = "tank1_naoh_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 135
+csv_column = "tank1_base_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 137
+csv_column = "tank2_cu_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 139
+csv_column = "tank2_hcho_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 141
+csv_column = "tank2_naoh_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 143
+csv_column = "tank2_base_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 145
+csv_column = "tank3_cu_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 147
+csv_column = "tank3_hcho_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 149
+csv_column = "tank3_naoh_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 151
+csv_column = "tank3_base_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 153
+csv_column = "tank4_cu_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 155
+csv_column = "tank4_hcho_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 157
+csv_column = "tank4_naoh_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 159
+csv_column = "tank4_base_dose_ml"
+data_type = "float32"
+
+[[registers]]
+type = "holding"
+address = 177
+csv_column = "tank_id_40177"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 178
+csv_column = "tank_id_40178"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 179
+csv_column = "state_word_40179"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 180
+csv_column = "state_word_40180"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 200
+csv_column = "alarm_word_40200"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 201
+csv_column = "alarm_word_40201"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 202
+csv_column = "alarm_word_40202"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 203
+csv_column = "alarm_word_40203"
+data_type = "uint16"
+
+[[registers]]
+type = "holding"
+address = 204
+csv_column = "alarm_word_40204"
+data_type = "uint16"
